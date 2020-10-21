@@ -1,0 +1,18 @@
+ansible_user: admin
+ansible_ssh_pass: admin
+ansible_connection: httpapi
+ansible_network_os: eos
+ansible_become: yes
+ansible_become_method: enable
+ansible_httpapi_use_ssl: true
+ansible_httpapi_validate_certs: false
+
+vlans:
+    - vlanid: 2
+      name: ans-prod
+    - vlanid: 3
+      name: ans-app
+
+os: EOS
+ntp-server: 172.22.60.22
+dns-server: 172.22.60.20

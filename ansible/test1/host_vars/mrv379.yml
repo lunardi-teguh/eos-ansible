@@ -1,0 +1,10 @@
+hostname: mrv379
+interfaces:
+    - name: Ethernet1
+      description: lp602-et6/1
+      memberlagid: 1
+      shut: shutdown
+    - name: Ethernet2
+      description: lp602-et6/2
+      memberlagid: 1
+      shut: shutdown

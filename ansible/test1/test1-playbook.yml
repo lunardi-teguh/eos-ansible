@@ -1,0 +1,33 @@
+---
+  - name: prepare directory
+    hosts: localhost
+    gather_facts: no
+    tasks: 
+      - name: create configs dir
+        file: path=configs state=directory
+
+  - name: config leafs
+    hosts: all
+    connection: local
+    gather_facts: no
+    tasks:
+      - name: run for leafs
+        debug:
+          msg: "DUT: {{ hostname }}"
+        when: "'leafs' in group_names"
+      - name: run for leaf1
+        debug:
+          msg: "{{ hostname }} is running {{ os }}"
+        when:
+          - inventory_hostname == 'mrv378'
+      - name: run for leaf2
+        debug:
+          msg: "{{ hostname }} is running {{ os }}"
+        when:
+          - inventory_hostname == 'mrv379'
+      - name: generate vlan configs for leafs
+        eos_config: 
+          src: vlan.j2
+      - name: generate interface configs for leafs
+        eos_config: 
+          src: intf.j2

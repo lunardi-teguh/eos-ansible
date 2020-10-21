@@ -1,0 +1,6 @@
+[pod1_leafs]
+mrv378 ansible_host=mrv378
+mrv379 ansible_host=mrv379
+
+[leafs]
+mrv37[8:9]

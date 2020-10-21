@@ -1,0 +1,5 @@
+{% for intf in interfaces %}
+interface {{ intf.name }}
+    description {{ intf.description }}
+    channel-group {{ intf.memberlagid }} mode active
+{% endfor %}

@@ -1,0 +1,10 @@
+hostname: mrv378
+interfaces:
+    - name: Ethernet1
+      description: lp602-et1/1
+      memberlagid: 1
+      shut: shutdown
+    - name: Ethernet2
+      description: lp602-et1/2
+      memberlagid: 1
+      shut: shutdow
